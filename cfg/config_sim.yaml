@@ -1,0 +1,73 @@
+%YAML:1.0
+#cam info ===========================
+cam_width: 2208
+cam_height: 1242
+fx: 1059.9959247613406
+fy: 1059.9959247613406
+cx: 1103.514893
+cy: 620.500122
+k1: 0
+k2: 0
+k3: 0
+r1: 0
+r2: 0
+need_undistort: 0
+
+#board info ===========================
+board_width: 8  #必须是偶数
+board_height: 6
+gride_side_length: 0.1  #格子大小(m)
+
+#some data path info
+data_root_path: "/media/lab/915c94cc-246e-42f5-856c-faf39f774d2c/CalibData/sim_data_my/horizon_0"
+error_path_pnp: "/outdoor/intermediate_results/pnp"
+error_path_opt: "/outdoor/intermediate_results/opt"
+cheesboard_path: "/outdoor/with_intensity"
+framesets_id_path: "/outdoor/intermediate_results/frameID_list"
+raw_pc_path: "/pc"
+img_path: "/imgs/R"
+sim_img_corner_path: "/imgs/corner_positions/R"
+sim_pc_corner_path: "/pc_corner_gt"
+
+angle_thd: 0.3
+board_edge_thd: 0.07
+noise_reflactivity_thd: 3
+
+
+#only for simulated data
+is_sim_data: 1
+
+sim_gt_cl_tx: 0.0764904720579709
+sim_gt_cl_ty: -0.0607296168358302
+sim_gt_cl_tz: -0.0467131814729206
+
+sim_gt_cl_r: 0.031140795675643
+sim_gt_cl_p: 0.0614426648208643
+sim_gt_cl_y: -0.0130665489100462
+
+#  [ 0.03129674  0.06148652 -0.01319517  0.07767084 -0.06014646 -0.04613389]
+
+
+#for black block extract
+reflactivity_dec_step: 0.95
+block_us_radius: 0.003 # for uniform sampling
+black_pt_cluster_dst_thd: 0.0085
+
+#for grid fitting optimization
+#以下是 点云所在半径/网格边长的比率
+uniform_sampling_radius: 0.0000
+neighbour_radius_rate: 0.8
+cost_radius_rate: 0.35   #一般不要超过neighbour_radius_rate / √2， 否则 cost_radius_rate*√2 > neighbour_radius_rate, 求梯度的搜索点就会超出当前领域点范围，造成不稳定
+max_iter_time: 20
+
+#for final calibration
+use_pnp_init: 1
+
+#debug params
+apply_noise_test: 0
+noise_x: 0.01
+noise_y: 0.01
+noise_yaml: 0.00
+DEBUG_SHOW: 0
+
+debug_param: 1
