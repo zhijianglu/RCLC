@@ -9,8 +9,6 @@ Since the paper related to this work are under peer-review, only the calibration
 If you have any questions or suggestions, or want to obtain the data supporting our paper, you can contact me by email: bit20lzc@163.com 
 
 ## Requirements
-
-## Requirements
 - PCL (>1.7)
 - Eigen3(3.3.4)
 - OpenCV (>3.0)
