@@ -14,17 +14,17 @@ If you have any questions or suggestions, or want to obtain the data supporting 
 - OpenCV (>3.0)
 - ceres
 
-## Status
+## Calibration results
 
 - grid fitting process:
 
   <img src="resources/grid_fitting.gif" style="zoom:100%;" />
 
-- Reproject results point cloud to image:
+- Reproject results: point cloud to image:
 
   <img src="resources/reprj-img.png" style="zoom:50%;" />
 
-- Reproject results image pixel map to point clouds:
+- Reproject results: image pixel map to point clouds:
 
   <img src="resources/reprj-pc.png" style="zoom:100%;" />
 
