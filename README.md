@@ -4,7 +4,7 @@ In this repository, we aim to build a high-precision automatic calibration tool 
 
 ## Citing
 
-If you use this source code for your academic publication, please cite our paper, and it can be free [download](https://opg.optica.org/oe/viewmedia.cfm?uri=oe-30-10-16242&seq=0):
+If you use this source code for your academic publication, please cite our paper, and it can be downloaded  [here](https://opg.optica.org/oe/viewmedia.cfm?uri=oe-30-10-16242&seq=0):
 
 > 		@article{RCLC,
 > 		author = {Zhengchao Lai and Yue Wang and Shangwei Guo and Xiantong Meng and Jun Li and Wenhao Li and Shaokun Han}
