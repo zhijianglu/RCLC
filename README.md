@@ -41,21 +41,21 @@ For non-commercial research use. Please cite our Optics Express paper when use i
 
 ## Usage
 
-- Configure `data_root_path` to be the data path in file **`config_real.yaml`**.
+1. Configure `data_root_path` to be the data path in file **`config_real.yaml`**.
 
-- build project:
+2. build project:
 
-  ` mkdir build && cd build `
+   ` mkdir build && cd build `
 
-  `cmake .. && make` 
+   `cmake .. && make` 
 
-- Segment the chessboard from pointcloud.
+3. Segment the chessboard from pointcloud.
 
-  `./BoardSegmentation`
+   `./BoardSegmentation`
 
-- Start calibrate and show the results.
+4. Start calibrate and show the results.
 
-  `./Calibrate`
+   `./Calibrate`
 
 ## Realworld Datasets
 Indoor and outdoor calibration data for MID-40 and Zed2 system can be downloded at [GoogleDrive](https://drive.google.com/drive/folders/1zLcwRlwguh5txwxgK075HkXIG-hlaE5V?usp=sharing)  
