@@ -49,7 +49,7 @@ If you use this source code for your academic publication, please cite our paper
 
   <div align=center><img src="resources/grid_fitting.gif" style="zoom:100%;" />
 
-- Reproject results: point cloud to image:
+- Reproject results: point cloud to image ( more than 100m distance, toward pixel-wise align precision ):
 
   <div align=center><img src="resources/reprj-img.png" style="zoom:50%;" />
 
