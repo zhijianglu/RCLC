@@ -6,18 +6,18 @@ In this repository, we aim to build a high-precision automatic calibration tool 
 
 If you use this source code for your academic publication, please cite our paper, and it can be free [download](https://opg.optica.org/oe/viewmedia.cfm?uri=oe-30-10-16242&seq=0):
 
-> 	@article{RCLC,
-> 	author = {Zhengchao Lai and Yue Wang and Shangwei Guo and Xiantong Meng and Jun Li and Wenhao Li and Shaokun Han}
-> 	number = {10},
-> 	pages = {16242--16263},
-> 	publisher = {OSA},
-> 	title = {Laser reflectance feature assisted accurate extrinsic calibration for non-repetitive scanning LiDAR and camera systems},
-> 	volume = {30},
-> 	month = {May},
-> 	year = {2022},
-> 	url = {http://opg.optica.org/oe/abstract.cfm?URI=oe-30-10-16242},
-> 	doi = {10.1364/OE.453449}
-> 	}
+> 		@article{RCLC,
+> 		author = {Zhengchao Lai and Yue Wang and Shangwei Guo and Xiantong Meng and Jun Li and Wenhao Li and Shaokun Han}
+> 		number = {10},
+> 		pages = {16242--16263},
+> 		publisher = {OSA},
+> 		title = {Laser reflectance feature assisted accurate extrinsic calibration for non-repetitive scanning LiDAR and camera systems},
+> 		volume = {30},
+> 		month = {May},
+> 		year = {2022},
+> 		url = {http://opg.optica.org/oe/abstract.cfm?URI=oe-30-10-16242},
+> 		doi = {10.1364/OE.453449}
+> 		}
 
 ## Requirements
 - PCL (>1.7)
@@ -83,7 +83,7 @@ The complete code of simulation tool has been uploaded to   [Livox_Cam_Simulator
 - The rviz visulation:
 
    
-   
+  
     <div align=center><img src="resources/rviz_pc.png" style="zoom:30%;" /></div>
 
 Point clouds with reflectance intensity which mapped according to the color of the materials:
