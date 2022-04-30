@@ -6,7 +6,7 @@
 
 param CfgParam;
 PinholeCam Cam;
-
+Eigen::Matrix4f T_base;
 void
 readParameters(std::string config_file)
 {
@@ -106,12 +106,20 @@ readParameters(std::string config_file)
 //    load other params
     CfgParam.apply_noise_test = fsSettings["apply_noise_test"];
     CfgParam.DEBUG_SHOW = fsSettings["DEBUG_SHOW"];
+    CfgParam.display_remove_oclusion = fsSettings["display_remove_oclusion"];
     CfgParam.debug_param = fsSettings["debug_param"];
     CfgParam.noise_x = fsSettings["noise_x"];
     CfgParam.noise_y = fsSettings["noise_y"];
     CfgParam.noise_yaml = fsSettings["noise_yaml"];
     fsSettings["corner_detect_method"] >> CfgParam.corner_detect_method;
 
+//  T_base for convert the lidar coordinate axis to the coordinate axis sequence of the camera (Z forward, y downward)
+//  May not necessary but for better understanding of the 3D points.
+    T_base.setIdentity();
+    T_base.block(0,0,3,3)<<
+                         0, -1, 0,
+                         0, 0, -1,
+                         1, 0,  0;
 
     cout << "parameters loaded!" << endl;
 

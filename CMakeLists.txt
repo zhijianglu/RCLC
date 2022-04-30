@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8)
-project(RCLC)
+project(RCLC_v2)
 set(CMAKE_CXX_STANDARD 14)
 
 set(CMAKE_BUILD_TYPE "Release")
@@ -35,42 +35,17 @@ if (OPENMP_FOUND)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
 endif ()
 
-add_executable(CompareTest apps/CompareTest.cpp src/global.cpp src/GMMFit.cpp src/GaussianFunction.cpp include/opt/board_fitting_cost.h)
-target_link_libraries(CompareTest  ${PCL_LIBRARIES}
-        /usr/lib/x86_64-linux-gnu/liblz4.a /usr/lib/x86_64-linux-gnu/liblz4.so
-        ${CERES_LIBRARIES} ${OpenCV_LIBS})
-
-add_executable(CodeTest apps/CodeTest.cpp src/global.cpp src/GMMFit.cpp src/GaussianFunction.cpp include/opt/board_fitting_cost.h)
-target_link_libraries(CodeTest  ${PCL_LIBRARIES}
-        /usr/lib/x86_64-linux-gnu/liblz4.a /usr/lib/x86_64-linux-gnu/liblz4.so
-        ${CERES_LIBRARIES} ${OpenCV_LIBS})
-
 add_executable(BoardSegmentation apps/BoardSegmentation.cpp src/global.cpp src/GMMFit.cpp src/GaussianFunction.cpp include/opt/board_fitting_cost.h)
 target_link_libraries(BoardSegmentation  ${PCL_LIBRARIES}
         /usr/lib/x86_64-linux-gnu/liblz4.a /usr/lib/x86_64-linux-gnu/liblz4.so
         ${CERES_LIBRARIES} ${OpenCV_LIBS})
 
-
-#单纯使用分割出来的标定板进行角点估计
 add_executable(BoardPointExt apps/BoardPointExt.cpp src/global.cpp src/GMMFit.cpp src/GaussianFunction.cpp include/opt/board_fitting_cost.h)
 target_link_libraries(BoardPointExt  ${PCL_LIBRARIES}
         /usr/lib/x86_64-linux-gnu/liblz4.a /usr/lib/x86_64-linux-gnu/liblz4.so
         ${CERES_LIBRARIES} ${OpenCV_LIBS})
 
-#使用分割出来的标定板进行角点估计之后，把结果写入到文件并且使用多帧进行优化，每次测试20种不同的组合
-add_executable(EvaluateSim apps/EvaluateSim.cpp src/global.cpp src/GMMFit.cpp src/GaussianFunction.cpp include/opt/board_fitting_cost.h)
-target_link_libraries(EvaluateSim  ${PCL_LIBRARIES}
-        /usr/lib/x86_64-linux-gnu/liblz4.a /usr/lib/x86_64-linux-gnu/liblz4.so
-        ${CERES_LIBRARIES} ${OpenCV_LIBS})
-
-#在真实数据上进行测试，使用分割出来的标定板进行角点估计之后，求解重投影误差
-add_executable(EvaluateReal apps/EvaluateReal.cpp src/global.cpp src/GMMFit.cpp src/GaussianFunction.cpp include/opt/board_fitting_cost.h)
-target_link_libraries(EvaluateReal  ${PCL_LIBRARIES}
-        /usr/lib/x86_64-linux-gnu/liblz4.a /usr/lib/x86_64-linux-gnu/liblz4.so
-        ${CERES_LIBRARIES} ${OpenCV_LIBS})
-
-#在真实数据上进行测试，使用分割出来的标定板进行角点估计之后，求解重投影误差
-add_executable(CrossEvaluate apps/CrossEvaluate.cpp src/global.cpp src/GMMFit.cpp src/GaussianFunction.cpp include/opt/board_fitting_cost.h)
-target_link_libraries(CrossEvaluate  ${PCL_LIBRARIES}
+add_executable(Calibrate apps/Calibrate.cpp src/global.cpp src/GMMFit.cpp src/GaussianFunction.cpp include/opt/board_fitting_cost.h)
+target_link_libraries(Calibrate  ${PCL_LIBRARIES}
         /usr/lib/x86_64-linux-gnu/liblz4.a /usr/lib/x86_64-linux-gnu/liblz4.so
         ${CERES_LIBRARIES} ${OpenCV_LIBS})

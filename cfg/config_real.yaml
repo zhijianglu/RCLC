@@ -3,10 +3,22 @@ cam_width: 2208
 cam_height: 1242
 
 #cam L info ===========================
-#fx: 1067.33563331454
-#fy: 1067.67775672957
-#cx: 1094.01910842977
-#cy: 644.954873502185
+fx: 1065.35720614683
+fy: 1065.6689380162
+cx: 1133.61619952792
+cy: 567.24023381768
+k1: -0.103423450596362
+k2: 0.123215002677024
+k3: 9.46579504415051e-05
+r1: -0.000613757818116764
+r2: -0.0638339140907025
+need_undistort: 1
+
+#cam R info ===========================
+#fx: 1065.07761408424
+#fy: 1065.40569687692
+#cx: 1071.45556203749
+#cy: 675.787304360860
 #k1: 0.0
 #k2: 0.0
 #k3: 0.0
@@ -14,45 +26,26 @@ cam_height: 1242
 #r2: 0.0
 #need_undistort: 0
 
-#cam R info ===========================
-fx: 1065.07761408424
-fy: 1065.40569687692
-cx: 1071.45556203749
-cy: 675.787304360860
-k1: 0.0
-k2: 0.0
-k3: 0.0
-r1: 0.0
-r2: 0.0
-need_undistort: 0
-
-#  stereo parameters:
-#  0.999999338992956	 -5.13812077544178e-05	0.00114863990135836
-#  4.56035660014599e-05	 0.999987351218247	    0.00502944567806551
-#  -0.00114888379145621	 -0.00502938997149094	0.999986692562730
-#  -0.119994768246006    -0.000174184734047787	0.000301631548705875
-
-
 #board info ===========================
-board_width: 8  #必须是偶数
+board_width: 8  # Must be even
 board_height: 5
-gride_side_length: 0.1  #格子大小(m)
-board_order: 1 # 0代表右上角网格为黑色
+gride_side_length: 0.1  #Grid side length (m)
+board_order: 0 # 0 Represents that the grid in the upper right corner is black, otherwise white
 
 #board segmentation params ===========================
 noise_reflactivity_thd: 3
 angle_thd: 0.5
 board_edge_thd: 0.07
-
 #some data path info
-data_root_path: "/media/lab/915c94cc-246e-42f5-856c-faf39f774d2c/CalibData/real_world_data_outdoor"
-error_path_pnp: "/intermediate_results/R/pnp"
-error_path_opt: "/intermediate_results/R/opt"
+data_root_path: "../calib_data"
+error_path_pnp: "/intermediate_results/L/pnp"
+error_path_opt: "/intermediate_results/L/opt"
+img_path: "/imgs/L"
 cheesboard_path: "/board"
-framesets_id_path: "/intermediate_results/L/frameID_list"
-raw_pc_path: "/pc_xyz"
-img_path: "/imgs/R_undist"
-corner_detect_method: "matlab" # matlab or opencv
+framesets_id_path: "/intermediate_results/frameID_list"
+raw_pc_path: "/pc"
+corner_detect_method: "opencv" # matlab or opencv
+
 #22 26 48
 #for black block extract
 reflactivity_dec_step: 0.95
@@ -63,7 +56,9 @@ black_pt_cluster_dst_thd: 0.0085
 #以下是 点云所在半径/网格边长的比率
 uniform_sampling_radius: 0.0000
 neighbour_radius_rate: 0.8
-cost_radius_rate: 0.35   #一般不要超过neighbour_radius_rate / √2， 否则 cost_radius_rate*√2 > neighbour_radius_rate, 求梯度的搜索点就会超出当前领域点范围，造成不稳定
+cost_radius_rate: 0.35
+#  The cost_radius_rate generally not greater than neighbour_radius_rate / √2， otherwise cost_radius_rate*√2 > neighbour_radius_rate,
+#  The search point for gradient will exceed the range of current field points, resulting in instability
 max_iter_time: 20
 
 #for final calibration
@@ -77,3 +72,7 @@ noise_yaml: 0.00
 DEBUG_SHOW: 0
 
 debug_param: 1
+display_remove_oclusion: 0
+
+
+
