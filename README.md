@@ -2,6 +2,43 @@
 
 In this repository, we aim to build a high-precision automatic calibration tool for Livox-LiDAR-Camera system using a printed chessboard.
 
+## Paper
+
+For non-commercial research use. Please cite our Optics Express paper when use it, and it can be downloaded  [here](https://opg.optica.org/oe/viewmedia.cfm?uri=oe-30-10-16242&seq=0):
+
+> 		@article{RCLC,
+> 		author = {Zhengchao Lai and Yue Wang and Shangwei Guo and Xiantong Meng and Jun Li and Wenhao Li and Shaokun Han}
+> 		number = {10},
+> 		pages = {16242--16263},
+> 		publisher = {OSA},
+> 		title = {Laser reflectance feature assisted accurate extrinsic calibration for non-repetitive scanning LiDAR and camera systems},
+> 		volume = {30},
+> 		month = {May},
+> 		year = {2022},
+> 		url = {http://opg.optica.org/oe/abstract.cfm?URI=oe-30-10-16242},
+> 		doi = {10.1364/OE.453449}
+> 		}
+
+## Calibration results
+
+- Grid fitting process:
+
+  <div align=center><img src="resources/grid_fitting.gif" style="zoom:100%;" />
+
+- Reproject results: point cloud to image ( more than 100m distance, toward pixel-wise align precision ):
+
+  <div align=center><img src="resources/reprj-img.png" style="zoom:50%;" />
+
+- Reproject results: image pixel map to point clouds:
+
+  <div align=center><img src="resources/reprj-pc.png" style="zoom:50%;" /></div>
+
+## Realworld Datasets
+Indoor and outdoor calibration data for MID-40 and Zed2 system can be downloded at [GoogleDrive](https://drive.google.com/drive/folders/1zLcwRlwguh5txwxgK075HkXIG-hlaE5V?usp=sharing)  
+
+<div align=center><img src="resources/img_realworld.png" width="360" height="220"><img src="resources/pc_realworld.png" width="360" height="220"></div>
+
+
 ## Requirements
 - PCL (>1.7)
 - Eigen3(3.3.4)
@@ -26,41 +63,7 @@ In this repository, we aim to build a high-precision automatic calibration tool 
 
   `./Calibrate`
 
-## Calibration results
 
-- Grid fitting process:
-
-  <div align=center><img src="resources/grid_fitting.gif" style="zoom:100%;" />
-
-- Reproject results: point cloud to image ( more than 100m distance, toward pixel-wise align precision ):
-
-  <div align=center><img src="resources/reprj-img.png" style="zoom:50%;" />
-
-- Reproject results: image pixel map to point clouds:
-
-  <div align=center><img src="resources/reprj-pc.png" style="zoom:50%;" /></div>
-
-## Realworld Datasets
-Indoor and outdoor calibration data for MID-40 and Zed2 system can be downloded at [GoogleDrive](https://drive.google.com/drive/folders/1zLcwRlwguh5txwxgK075HkXIG-hlaE5V?usp=sharing)  
-
-<div align=center><img src="resources/img_realworld.png" width="360" height="220"><img src="resources/pc_realworld.png" width="360" height="220"></div>
-
-## Paper
-
-For non-commercial research use. Please cite our Optics Express paper when use it, and it can be downloaded  [here](https://opg.optica.org/oe/viewmedia.cfm?uri=oe-30-10-16242&seq=0):
-
-> 		@article{RCLC,
-> 		author = {Zhengchao Lai and Yue Wang and Shangwei Guo and Xiantong Meng and Jun Li and Wenhao Li and Shaokun Han}
-> 		number = {10},
-> 		pages = {16242--16263},
-> 		publisher = {OSA},
-> 		title = {Laser reflectance feature assisted accurate extrinsic calibration for non-repetitive scanning LiDAR and camera systems},
-> 		volume = {30},
-> 		month = {May},
-> 		year = {2022},
-> 		url = {http://opg.optica.org/oe/abstract.cfm?URI=oe-30-10-16242},
-> 		doi = {10.1364/OE.453449}
-> 		}
 
 ## Simulated Datasets
 
